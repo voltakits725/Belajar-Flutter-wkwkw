@@ -1,7 +1,8 @@
+
 import 'package:flutter/material.dart';
 import 'counter.dart';
 
-void main(){
+void main() {
   runApp(const MyApp());
 }
 
@@ -10,24 +11,65 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CounterPage(),
-      // home: Scaffold(
-      //   appBar: AppBar(
-      //     title: const Text('Profil Mahasiswa'),
-      //     backgroundColor: Colors.yellowAccent,
-      //   ),
-      //   body: const Column(
-      //     mainAxisAlignment: MainAxisAlignment.center,
-      //     crossAxisAlignment: CrossAxisAlignment.center,
-      //     children: [
-      //       Icon(Icons.person, size: 60,),
-      //       SizedBox(height: 12),
-      //       Text('Rafly Kurniawan'),
-      //     ],
-      //   ),
-      // ),
+      home: ProfilePage(),
     );
   }
 }
+
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Profil Mahasiswa'),
+        backgroundColor: Colors.yellowAccent,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Icon(
+              Icons.person,
+              size: 70,
+            ),
+            const SizedBox(height: 12),
+            const Text(
+              'Rafly Kurniawan',
+              style: TextStyle(fontSize: 22),
+            ),
+            const SizedBox(height: 24),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const CounterPage(),
+                  ),
+                );
+              },
+              child: const Text('Buka Counter'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+//Navigator.push()
+//Memasukkan halaman baru ke dalam tumpukan navigasi dan menampilkannya.
+
+// MaterialPageRoute()
+// Membuat rute halaman dengan transisi bergaya Material.
+
+
+// builder: (context) => const CounterPage()
+// Menentukan widget yang akan ditampilkan sebagai halaman tujuan, yaitu CounterPage dari file counter.dart.
+
+
+// context
+// Memberikan konteks lokasi widget dalam struktur aplikasi, yang digunakan Navigator untuk melakukan navigasi.
