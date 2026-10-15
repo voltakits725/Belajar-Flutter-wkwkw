@@ -1,7 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'counter.dart';
-
+import 'text_page.dart';
+import 'icon_page.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -34,6 +35,7 @@ class ProfilePage extends StatelessWidget {
           children: [
             const Icon(
               Icons.person,
+              color: Colors.green,
               size: 70,
             ),
             const SizedBox(height: 12),
@@ -41,6 +43,7 @@ class ProfilePage extends StatelessWidget {
               'Rafly Kurniawan',
               style: TextStyle(fontSize: 22),
             ),
+
             const SizedBox(height: 24),
             ElevatedButton(
               onPressed: () {
@@ -53,7 +56,34 @@ class ProfilePage extends StatelessWidget {
               },
               child: const Text('Buka Counter'),
             ),
-          ],
+
+            const SizedBox(height: 12,),
+            ElevatedButton(
+              onPressed: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const TextPage(),
+                  ),
+                );
+              },
+              child: const Text('Belajar Text'),
+            ),
+
+            const SizedBox(height: 15),
+
+            ElevatedButton(
+              onPressed: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const IconPage(),
+                  ),
+                );
+              }, 
+              child: const Text('Belajar Icon'),
+              ),
+
+          ], //children
+
         ),
       ),
     );
