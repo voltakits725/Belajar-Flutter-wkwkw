@@ -4,6 +4,8 @@ import 'counter.dart';
 import 'text_page.dart';
 import 'icon_page.dart';
 import 'image_page.dart';
+import 'asset_page.dart';
+import 'file_page.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -94,6 +96,31 @@ class ProfilePage extends StatelessWidget {
                 }, 
               child: 
               const Text('Belajar Image'),
+              ),
+
+              SizedBox(height: 8),
+              ElevatedButton(
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const AssetPage(),
+                    ),
+                  );
+                }, 
+                child: const Text('Belajar Image Asset'),
+              ),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const FilePage(),
+                    ),
+                  );
+                },
+                child: const Text('Belajar File Asset'),
               ),
           ], //children
 

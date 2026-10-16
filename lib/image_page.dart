@@ -13,14 +13,14 @@ class ImagePage extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            
+          children: [ 
             Image.network(
               'https://picsum.photos/300/200',
               width: 250,
-              height: 250,
+              height: 160,
               fit: BoxFit.contain,
             ),
+            const SizedBox(height: 8),
             const Text('Gambar favoritku')
           ],
         ),
