@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'counter.dart';
 import 'text_page.dart';
 import 'icon_page.dart';
+import 'image_page.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -82,6 +83,18 @@ class ProfilePage extends StatelessWidget {
               child: const Text('Belajar Icon'),
               ),
 
+              const SizedBox(height: 15,),
+              ElevatedButton(
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ImagePage(),
+                    ),
+                  );
+                }, 
+              child: 
+              const Text('Belajar Image'),
+              ),
           ], //children
 
         ),
