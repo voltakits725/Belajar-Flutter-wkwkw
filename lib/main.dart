@@ -1,11 +1,17 @@
 
 import 'package:flutter/material.dart';
+
 import 'counter.dart';
 import 'text_page.dart';
 import 'icon_page.dart';
 import 'image_page.dart';
 import 'asset_page.dart';
 import 'file_page.dart';
+import 'container.dart';
+import 'row_page.dart';
+import 'column.dart';
+import 'latihanrow.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -32,114 +38,160 @@ class ProfilePage extends StatelessWidget {
         title: const Text('Profil Mahasiswa'),
         backgroundColor: Colors.yellowAccent,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Icon(
-              Icons.person,
-              color: Colors.green,
-              size: 70,
-            ),
-            const SizedBox(height: 12),
-            const Text(
-              'Rafly Kurniawan',
-              style: TextStyle(fontSize: 22),
-            ),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const SizedBox(height: 24),
 
-            const SizedBox(height: 24),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const CounterPage(),
+              const Icon(
+                Icons.person,
+                color: Colors.green,
+                size: 70,
+              ),
+
+              const SizedBox(height: 12),
+
+              const Text(
+                'Rafly Kurniawan',
+                style: TextStyle(fontSize: 22),
+              ),
+
+              const SizedBox(height: 24),
+
+              Wrap(
+                spacing: 12,
+                runSpacing: 12,
+                alignment: WrapAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const CounterPage(),
+                        ),
+                      );
+                    },
+                    child: const Text('Buka Counter'),
                   ),
-                );
-              },
-              child: const Text('Buka Counter'),
-            ),
 
-            const SizedBox(height: 12,),
-            ElevatedButton(
-              onPressed: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const TextPage(),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const TextPage(),
+                        ),
+                      );
+                    },
+                    child: const Text('Belajar Text'),
                   ),
-                );
-              },
-              child: const Text('Belajar Text'),
-            ),
 
-            const SizedBox(height: 15),
-
-            ElevatedButton(
-              onPressed: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const IconPage(),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const IconPage(),
+                        ),
+                      );
+                    },
+                    child: const Text('Belajar Icon'),
                   ),
-                );
-              }, 
-              child: const Text('Belajar Icon'),
+
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ImagePage(),
+                        ),
+                      );
+                    },
+                    child: const Text('Belajar Image'),
+                  ),
+
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const AssetPage(),
+                        ),
+                      );
+                    },
+                    child: const Text('Belajar Image Asset'),
+                  ),
+
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const FilePage(),
+                        ),
+                      );
+                    },
+                    child: const Text('Belajar File Asset'),
+                  ),
+
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ContainerPage(),
+                        ),
+                      );
+                    },
+                    child: const Text('Container'),
+                  ),
+
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const RowPage(),
+                        ),
+                      );
+                    },
+                    child: const Text('Belajar Row'),
+                  ),
+
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ColumnPage(),
+                        ),
+                      );
+                    },
+                    child: const Text('Belajar Column'),
+                  ),
+
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ProfilKu(),
+                        ),
+                      );
+                    },
+                    child: const Text('Row and Column Practice'),
+                  ),
+                ],
               ),
 
-              const SizedBox(height: 15,),
-              ElevatedButton(
-                onPressed: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const ImagePage(),
-                    ),
-                  );
-                }, 
-              child: 
-              const Text('Belajar Image'),
-              ),
-
-              SizedBox(height: 8),
-              ElevatedButton(
-                onPressed: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const AssetPage(),
-                    ),
-                  );
-                }, 
-                child: const Text('Belajar Image Asset'),
-              ),
-
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const FilePage(),
-                    ),
-                  );
-                },
-                child: const Text('Belajar File Asset'),
-              ),
-          ], //children
-
+              const SizedBox(height: 24),
+            ],
+          ),
         ),
       ),
     );
   }
 }
-
-//Navigator.push()
-//Memasukkan halaman baru ke dalam tumpukan navigasi dan menampilkannya.
-
-// MaterialPageRoute()
-// Membuat rute halaman dengan transisi bergaya Material.
-
-
-// builder: (context) => const CounterPage()
-// Menentukan widget yang akan ditampilkan sebagai halaman tujuan, yaitu CounterPage dari file counter.dart.
-
-
-// context
-// Memberikan konteks lokasi widget dalam struktur aplikasi, yang digunakan Navigator untuk melakukan navigasi.
